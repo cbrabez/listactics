@@ -1,0 +1,20 @@
+
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                   [fixedTopGap]="options.value.top"
+                   [fixedBottomGap]="options.value.bottom">
+                   <mat-selection-list [multiple]="false">
+                    <mat-list-option>
+                      <a class="nav-item nav-link" routerLink="home">Home</a>
+                    </mat-list-option>
+                    <mat-list-option>
+                      <a class="nav-item nav-link" routerLink="todoList">Todo's</a>
+                    </mat-list-option>
+                  </mat-selection-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content [formGroup]="options">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  
