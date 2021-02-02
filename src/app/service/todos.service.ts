@@ -9,7 +9,34 @@ export class TodosService {
     
   }
   
+  findMondayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 1)).snapshotChanges();
+  }
+
+  findTuesdayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 2)).snapshotChanges();
+  }
+
+  findWednesdayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 3)).snapshotChanges();
+  }
+
+  findThursdayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 4)).snapshotChanges();
+  }
+
+  findFridayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 5)).snapshotChanges();
+  }
+
+  findSaturdayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 6)).snapshotChanges();
+  }
  
+  findSundayTodos(){
+    return this.firestore.collection('Todos', ref => ref.where("day", "==", 7)).snapshotChanges();
+  }
+
   findLastCreatedTodos(limit: number) {
     return this.firestore.collection('Todos', ref => ref.orderBy('date', 'desc').limit(limit)).snapshotChanges();
   }
@@ -22,7 +49,12 @@ export class TodosService {
     return this.firestore.collection('Todos').doc(id).set(todo, { merge: true });
   }
 
-  createTodo(todo: {}) {
+  deleteTodo(todo){
+    // console.log(todo.payload.doc.id)
+    return this.firestore.collection('Todos').doc(todo.payload.doc.id).delete();
+  }
+
+  createTodo(todo: {}, day?: number) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
       .collection('Todos')

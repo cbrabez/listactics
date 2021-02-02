@@ -12,6 +12,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { FilterPipe } from './shared/pipes/my-filter.pipe';
 
 // Angular Material 
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -23,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {MatListModule} from '@angular/material/list';
     HomeComponent,
     TodoListComponent,
     TodoAddComponent,
-    SidenavComponent
+    SidenavComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatCheckboxModule,
     MatFormFieldModule,
+    MatDividerModule,
     MatListModule,
     MatToolbarModule,
     MatInputModule,

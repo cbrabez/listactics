@@ -1,4 +1,116 @@
-    <div>
+<div cdkDropListGroup>
+<div class="example-container">
+  <h2>Monday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="mondayTodos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of mondayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+  </div>
+    <mat-form-field class="addTodo" appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput>
+    </mat-form-field>
+</div>
+
+<div class="example-container">
+  <h2>Tuesday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="tuesdayTodos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of tuesdayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+    
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Wednesday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="todos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of wednesdayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Thursday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="todos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of thursdayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Friday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="todos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of fridayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Saturday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="todos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of saturdayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Sunday</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="todos"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of sundayTodos" cdkDrag>
+      {{item.payload.doc.data().title}}
+      <a [routerLink]="" (click)="deleteTask(item)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></a>
+    </div>
+  </div>
+</div>
+</div>
+<mat-divider></mat-divider>
+<div>
     <h6 class="border-bottom border-gray pb-2 mb-0">Last 5 todos</h6> 
     <div class="media text-muted pt-3" *ngFor="let todo of lastCreatedFiveTodos">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">

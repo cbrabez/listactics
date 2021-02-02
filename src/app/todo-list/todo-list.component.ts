@@ -16,7 +16,7 @@ findAllTodos() {
       this.todos = res;
     });
   }
-updateToDo(id) {
-    this.todosService.updateTodo(id, { status: false });
+updateToDo(id, day) {
+    this.todosService.updateTodo(id, { day: day });
   }
 }

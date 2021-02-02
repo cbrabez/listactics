@@ -23,6 +23,7 @@ onSubmit() {
 const todo = {
       title: this.todoForm.value.title,
       date: new Date(this.todoForm.value.date),
+      day: 3,
       created: new Date(),
       status: true
     };
